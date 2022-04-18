@@ -59,7 +59,25 @@ for ($i=2; $i<=$jumlah_baris; $i++){
 		/**
 		 * Coba check tulisan pada query ini created_at harusnya $created_at
 		 */
-		$sql = "INSERT into hibah_2022 ('peruntukan,tahun_pengajuan,kecamatan,desa,program,kegiatan,sub_kegiatan,opd_rekomendasi,opd_pelaksana,uraian_keg_satuan,penerima,pimpinan,bhi,alamat,nominal,tahun_terakhir_menerima,tanggal_permohonan,nomor_permohonan,nomor_penerbitan_rekomendasi,pejabat_penerbitan_rekomendasi,tanggal_penerbitan_rekomendasi,tanggal_disposisi_bupati,tanggal_pertimbangan_ketua_tapd,isi_disposisi_ketua_tapd','created_at','created_by') values('$peruntukan','$tahun_pengajuan', '$kecamatan','$desa','program','$kegiatan','$sub_kegiatan','$opd_rekomendasi','$opd_pelaksana', $uraian_keg_satuan','$penerima','$pimpinan','$bhi','$alamat','$nominal','$tahun_terakhir_menerima','$tanggal_permohonan','$nomor_permohonan','$nomor_penerbitan_rekomendasi','$pejabat_penerbitan_rekomendasi','$tanggal_penerbitan_rekomendasi','$tanggal_disposisi_bupati','$tanggal_pertimbangan_ketua_tapd','$isi_disposisi_ketua_tapd','$created_at','$created_by')";
+		$sql = "INSERT INTO hibah_2022 (peruntukan,tahun_pengajuan,kecamatan,desa,
+		program,kegiatan,sub_kegiatan,opd_rekomendasi,opd_pelaksana,
+		uraian_keg_satuan,penerima,pimpinan,bhi,alamat,nominal,
+		tahun_terakhir_menerima,tanggal_permohonan,nomor_permohonan,
+		nomor_penerbitan_rekomendasi,pejabat_penerbitan_rekomendasi,
+		tanggal_penerbitan_rekomendasi,tanggal_disposisi_bupati,
+		tanggal_pertimbangan_ketua_tapd,isi_disposisi_ketua_tapd,
+		created_at,created_by)
+		VALUES ('$peruntukan','$tahun_pengajuan', '$kecamatan',
+		'$desa','program','$kegiatan','$sub_kegiatan',
+		'$opd_rekomendasi','$opd_pelaksana', $uraian_keg_satuan',
+		'$penerima','$pimpinan','$bhi','$alamat',
+		'$nominal','$tahun_terakhir_menerima',
+		'$tanggal_permohonan','$nomor_permohonan',
+		'$nomor_penerbitan_rekomendasi','$pejabat_penerbitan_rekomendasi',
+		'$tanggal_penerbitan_rekomendasi','$tanggal_disposisi_bupati',
+		'$tanggal_pertimbangan_ketua_tapd','$isi_disposisi_ketua_tapd',
+		'$created_at','$created_by'
+		)";
 
 		var_dump($sql);
 		/**
