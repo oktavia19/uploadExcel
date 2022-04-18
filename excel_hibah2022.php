@@ -69,7 +69,7 @@ for ($i=2; $i<=$jumlah_baris; $i++){
 		created_at,created_by)
 		VALUES ('$peruntukan','$tahun_pengajuan', '$kecamatan',
 		'$desa','program','$kegiatan','$sub_kegiatan',
-		'$opd_rekomendasi','$opd_pelaksana', $uraian_keg_satuan',
+		'$opd_rekomendasi','$opd_pelaksana', '$uraian_keg_satuan',
 		'$penerima','$pimpinan','$bhi','$alamat',
 		'$nominal','$tahun_terakhir_menerima',
 		'$tanggal_permohonan','$nomor_permohonan',
@@ -79,15 +79,12 @@ for ($i=2; $i<=$jumlah_baris; $i++){
 		'$created_at','$created_by'
 		)";
 
-		var_dump($sql);
 		/**
 		 * Jika kode di atas hasilnya sudah benar
 		 */
 
 		 $save = $this->db->query($sql);
 
-		 var_dump($save);
-		
 		//$query=mysqli_query($koneksi,"INSERT into hibah_2022 ('peruntukan,tahun_pengajuan,kecamatan,desa,program,kegiatan,sub_kegiatan,opd_rekomendasi,opd_pelaksana,uraian_keg_satuan,penerima,pimpinan,bhi,alamat,nominal,tahun_terakhir_menerima,tanggal_permohonan,nomor_permohonan,nomor_penerbitan_rekomendasi,pejabat_penerbitan_rekomendasi,tanggal_penerbitan_rekomendasi,tanggal_disposisi_bupati,tanggal_pertimbangan_ketua_tapd,isi_disposisi_ketua_tapd','created_at','created_by') values('$peruntukan','$tahun_pengajuan', '$kecamatan','$desa','program','$kegiatan','$sub_kegiatan','$opd_rekomendasi','$opd_pelaksana', $uraian_keg_satuan','$penerima','$pimpinan','$bhi','$alamat','$nominal','$tahun_terakhir_menerima','$tanggal_permohonan','$nomor_permohonan','$nomor_penerbitan_rekomendasi','$pejabat_penerbitan_rekomendasi','$tanggal_penerbitan_rekomendasi','$tanggal_disposisi_bupati','$tanggal_pertimbangan_ketua_tapd','$isi_disposisi_ketua_tapd','$created_at','$created_by')");
 		
 		
@@ -95,11 +92,11 @@ for ($i=2; $i<=$jumlah_baris; $i++){
 		 * Kalau di CI
 		 */
 		
-		/*if(!$query ){
+		if(!$save){
 			echo "<script>alert('Gagal di tambahkan!');history.go(-1);</script>";
 		} else{
 			echo "<script>alert('Data berhasil di tambahkan!');history.go(-1);</script>";
-		}*/
+		}
 	}
 }
 
