@@ -19,6 +19,7 @@ $data = new Spreadsheet_Excel_Reader($_FILES['impor']['name'],false);
 // menghitung jumlah baris data yang ada
 $jumlah_baris = $data->rowcount($sheet_index=0);
 
+var_dump($data); // Cek dahulu apakah data di excel terbaca, biasakan untuk membaca data terlebih dahulu sebelum melakukan saving
 // jumlah default data yang berhasil di import
 
 $jenis_pengajuan="hibah";
@@ -60,14 +61,14 @@ for ($i=2; $i<=$jumlah_baris; $i++){
 		
 		$query=mysqli_query($koneksi,"INSERT into hibah_2022 ('peruntukan,tahun_pengajuan,kecamatan,desa,program,kegiatan,sub_kegiatan,opd_rekomendasi,opd_pelaksana,uraian_keg_satuan,penerima,pimpinan,bhi,alamat,nominal,tahun_terakhir_menerima,tanggal_permohonan,nomor_permohonan,nomor_penerbitan_rekomendasi,pejabat_penerbitan_rekomendasi,tanggal_penerbitan_rekomendasi,tanggal_disposisi_bupati,tanggal_pertimbangan_ketua_tapd,isi_disposisi_ketua_tapd','created_at','created_by') values('$peruntukan','$tahun_pengajuan', '$kecamatan','$desa','program','$kegiatan','$sub_kegiatan','$opd_rekomendasi','$opd_pelaksana', $uraian_keg_satuan','$penerima','$pimpinan','$bhi','$alamat','$nominal','$tahun_terakhir_menerima','$tanggal_permohonan','$nomor_permohonan','$nomor_penerbitan_rekomendasi','$pejabat_penerbitan_rekomendasi','$tanggal_penerbitan_rekomendasi','$tanggal_disposisi_bupati','$tanggal_pertimbangan_ketua_tapd','$isi_disposisi_ketua_tapd','created_at','$created_by')");
 		
-		if(!$query ){
+		/*if(!$query ){
 			echo "<script>alert('Gagal di tambahkan!');history.go(-1);</script>";
 		} else{
 			echo "<script>alert('Data berhasil di tambahkan!');history.go(-1);</script>";
-		}
+		}*/
 	}
 }
 
 // hapus kembali file .xls yang di upload tadi
 	unlink($_FILES['impor']['name']);
-	?>
+?>
